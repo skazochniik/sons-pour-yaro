@@ -148,15 +148,14 @@ tracks.forEach((track, index) => {
     </div>
 
     <div class="player-controls">
-      <button class="control-btn prev-btn" type="button">⏮</button>
-      <button class="control-btn large play-btn" type="button">▶</button>
-      <button class="control-btn stop-btn" type="button">■</button>
+     <button class="control-btn large play-btn" type="button">▶</button>
+     <button class="control-btn stop-btn" type="button">■</button>
 
-      <div class="volume-wrap">
-        <div class="volume-label">volume</div>
-        <input class="volume-slider" type="range" min="0" max="1" step="0.01" value="1" />
-      </div>
-    </div>
+   <div class="volume-wrap">
+     <div class="volume-label">volume</div>
+     <input class="volume-slider" type="range" min="0" max="1" step="0.01" value="1" />
+     </div>
+   </div>
 
     <div class="track-actions">
       <a class="player-link" href="${track.file}" download>télécharger</a>
@@ -168,7 +167,6 @@ tracks.forEach((track, index) => {
   const audio = card.querySelector(".track-audio");
   const playBtn = card.querySelector(".play-btn");
   const stopBtn = card.querySelector(".stop-btn");
-  const prevBtn = card.querySelector(".prev-btn");
   const timeDisplay = card.querySelector(".screen-time");
   const progress = card.querySelector(".player-progress");
   const volume = card.querySelector(".volume-slider");
@@ -190,12 +188,6 @@ tracks.forEach((track, index) => {
     audio.currentTime = 0;
 
     playBtn.textContent = "▶";
-    progress.value = 0;
-    timeDisplay.textContent = "0:00";
-  });
-
-  prevBtn.addEventListener("click", () => {
-    audio.currentTime = 0;
     progress.value = 0;
     timeDisplay.textContent = "0:00";
   });
